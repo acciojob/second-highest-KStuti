@@ -21,14 +21,18 @@
             }
         }
 
-        function secondHighest(arr) {
-            if (arr.length > 1) {
-                arr.sort((a, b) => a - b);
-                return arr[arr.length - 2];
-            } else {
-                return -Infinity;
-            }
-        }
+       function secondHighest(arr) {
+    if (new Set(arr).size === 1) {
+        return -Infinity;
+    }
+
+    if (arr.length > 1) {
+        arr.sort((a, b) => a - b);
+        return arr[arr.length - 2];
+    } else {
+        return -Infinity;
+    }
+}
 
         function Main() {
             var n = prompt("Enter the number of elements");
