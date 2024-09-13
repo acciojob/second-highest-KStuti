@@ -1,53 +1,47 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>	
-	<script>
-		function isUnique(arr) {
-	const freq = {};
-	for (let i = 0; i < arr.length; i++) {
-		if (freq.hasOwnProperty(arr[i])) {
-			freq[arr[i]] += 1;
-		} else {
-			freq[arr[i]] = 1;
-		}
-	}
-	if (Object.values(freq).sort()[Object.values(freq).length - 1] === 1) {
-		return true;
-	} else {
-		return false;
-	}
-}
+    <script>
+        function isUnique(arr) {
+            const freq = {};
+            for (let i = 0; i < arr.length; i++) {
+                if (freq.hasOwnProperty(arr[i])) {
+                    freq[arr[i]] += 1;
+                } else {
+                    freq[arr[i]] = 1;
+                }
+            }
+            if (Object.values(freq).sort()[Object.values(freq).length - 1] === 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
-function secondHighest(arr) {
-	if (arr.length > 1) {
-		arr.sort((a, b) => a - b);
-		return arr[arr.length - 2];
-	} else {
-		return -Infinity;
-	}
-}
+        function secondHighest(arr) {
+            if (arr.length > 1) {
+                arr.sort((a, b) => a - b);
+                return arr[arr.length - 2];
+            } else {
+                return -Infinity;
+            }
+        }
 
-function Main() {
-	var n = prompt("Enter the number of elements");
-	var arr = [];
-	for (var i = 0; i < n; i++) {
-		arr[i] = prompt("Enter element " + (i + 1));
-	}
-	alert(secondHighest(arr));
-}
+        function Main() {
+            var n = prompt("Enter the number of elements");
+            var arr = [];
+            for (var i = 0; i < n; i++) {
+                arr[i] = prompt("Enter element " + (i + 1));
+            }
+            alert(secondHighest(arr));
+        }
 
-Main();
-	</script>
+        Main();
+    </script>
 
-    <script type="text/javascript" src="./script.js">
-</script>
-
+    <script type="text/javascript" src="./script.js"></script>
 </body>
-
 </html>
