@@ -8,46 +8,41 @@
 
 <body>	
 	<script>
-		const arr1=[5, 1, 2, 3, 4]
-		const arr2=[-1, -2, -3, -4, -5]
-		const arr3=[]
-		const arr4=[1]
-		const arr5=[1, 1, 1, 1, 1]
-			//Write your code 
-		
-			function isUnique(arr){
-          const freq ={};
-          for(let i =0; i<arr.length; i++) {
-            if (freq.hasownproperty(arr[i]))
-            freq[arr[i]]+=1;
-            else 
-            freq[arr[i]]=1;
-          }
-          if (object.values(freq).sort()[object.values(freq).length-1]===1)
-            return true;
-            else
-            return false;
-          }
-          function secondHighest(arr) {
-            if(arr.length>1) {
-              arr.sort((a,b)=> a-b);
-              of()
-              return arr[arr.length-2];
-              }
-              else{
-                return -Infinity;
-              }
+		function isUnique(arr) {
+	const freq = {};
+	for (let i = 0; i < arr.length; i++) {
+		if (freq.hasOwnProperty(arr[i])) {
+			freq[arr[i]] += 1;
+		} else {
+			freq[arr[i]] = 1;
 		}
-             
-		function Main() {
-			var n = prompt("Enter the number of elements");
-			var arr = [];
-			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
-			}
-			alert(secondHighest(arr));
-		}
-		Main();
+	}
+	if (Object.values(freq).sort()[Object.values(freq).length - 1] === 1) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function secondHighest(arr) {
+	if (arr.length > 1) {
+		arr.sort((a, b) => a - b);
+		return arr[arr.length - 2];
+	} else {
+		return -Infinity;
+	}
+}
+
+function Main() {
+	var n = prompt("Enter the number of elements");
+	var arr = [];
+	for (var i = 0; i < n; i++) {
+		arr[i] = prompt("Enter element " + (i + 1));
+	}
+	alert(secondHighest(arr));
+}
+
+Main();
 	</script>
 
     <script type="text/javascript" src="./script.js">
